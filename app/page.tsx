@@ -1,25 +1,31 @@
-"use client";
+"use client"
 
-import Lenis from "lenis";
-import { useEffect } from "react";
+import { useEffect } from "react"
+import HeroHeading from "./components/hero-heading"
+import HeroNav from "./components/hero-nav"
+import IconSocialsSidebar from "./components/icon-socials-sidebar"
+import Lenis from "lenis"
 
 export default function Home() {
   useEffect(() => {
-    const lenis = new Lenis();
+    const lenis = new Lenis()
 
     function raf(time: number) {
-      lenis.raf(time);
+      lenis.raf(time)
 
-      requestAnimationFrame(raf);
+      requestAnimationFrame(raf)
     }
 
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0)
 
-    requestAnimationFrame(raf);
-  }, []);
+    requestAnimationFrame(raf)
+  }, [])
 
   return (
-    <div className="flex bg-[#10100E] relative min-h-[100vh] justify-center items-center">
+    <div className="bg-cod-gray-background relative grid min-h-screen auto-rows-auto grid-cols-12 uppercase">
+      <HeroHeading />
+      <HeroNav />
+      <IconSocialsSidebar className="absolute right-0 flex h-full flex-col justify-center gap-4 p-4" />
     </div>
-  );
+  )
 }
