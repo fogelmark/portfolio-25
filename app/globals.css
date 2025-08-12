@@ -13,8 +13,9 @@
 }
 
 @theme {
-  --color-cod-gray-secondary: oklch(0.7572 0 0);
-  --color-cod-gray-background: oklch(0.1722 0.0041 106.82);
+  --color-gray-secondary: oklch(0.7572 0 0);
+  --color-gray-background: oklch(0.1722 0.0041 106.82);
+  --color-gray-tertiary: oklch(0.36 0 0);
 }
 
 @media (prefers-color-scheme: dark) {

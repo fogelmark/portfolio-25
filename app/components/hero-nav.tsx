@@ -3,8 +3,8 @@ import React from "react"
 
 export default function HeroNav() {
   return (
-    <nav className="col-span-12 flex items-center justify-center self-center">
-      <ul className="text-cod-gray-secondary flex gap-2.5 text-xs font-medium">
+    <nav className="col-span-12 flex items-center justify-center self-center uppercase">
+      <ul className="text-gray-secondary flex gap-2.5 text-xs font-medium">
         <li>
           <Link href="/about">about</Link>
         </li>
