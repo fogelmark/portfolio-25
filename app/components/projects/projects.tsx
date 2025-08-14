@@ -10,20 +10,23 @@ import counter_b_portrait from "@/public/images/counter-app-b-portrait.png"
 import counter_c_portrait from "@/public/images/counter-app-c-portrait.png"
 
 export default function Projects() {
-  const [toggle, setToggle] = useState(false)
+  const [selectedProject, setSelectedProject] = useState<
+    null | (typeof projects)[0]
+  >(null)
 
-  function handleClick() {
-    setToggle((prev) => !prev)
-    console.log(toggle)
+  function handleClick(project: (typeof projects)[0]) {
+    setSelectedProject(project)
   }
 
+  console.log(selectedProject)
+
   return (
-    <div className="grid min-h-screen auto-rows-min grid-cols-12 py-10 gap-6 px-6">
+    <div className="grid min-h-screen auto-rows-min grid-cols-12 gap-6 px-6 py-10">
       <div
         className={cn(
           "text-gray-secondary col-span-12 flex items-center justify-between text-xs uppercase",
           {
-            hidden: toggle,
+            hidden: selectedProject !== null,
           },
         )}
       >
@@ -32,27 +35,27 @@ export default function Projects() {
       </div>
       <ul
         className={cn("col-span-12", {
-          hidden: toggle,
+          hidden: selectedProject !== null,
         })}
       >
-        {projects.map(({ name, stack }) => (
+        {projects.map((project) => (
           <motion.li
             whileHover={{ paddingLeft: 8, paddingRight: 8 }}
             transition={{ type: "tween", duration: 0.2 }}
-            key={name}
-            onClick={handleClick}
+            key={project.name}
+            onClick={() => handleClick(project)}
             className={cn(
               "text-gray-tertiary border-b-gray-tertiary/50 relative flex cursor-pointer items-end justify-between border-b py-2 hover:text-white",
               {},
             )}
           >
-            <h3 className="text-3xl">{name}</h3>
-            <p className="text-xs uppercase">{stack}</p>
+            <h3 className="text-3xl">{project.name}</h3>
+            <p className="text-xs uppercase">{project.stack}</p>
           </motion.li>
         ))}
       </ul>
 
-      {toggle && (
+      {selectedProject && (
         <div
           className={cn(
             "col-span-12 grid w-full grid-cols-[0.5fr_1fr] gap-0",
@@ -61,12 +64,8 @@ export default function Projects() {
         >
           <div className="flex w-2/3 max-w-[300px] flex-col gap-12">
             <div className="flex flex-col gap-2">
-              <h3 className="text-3xl">LÉON</h3>
-              <p className="text-sm">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-                eu erat quis purus laoreet consectetur sit amet eget mauris.
-                Donec non ultricies leo.
-              </p>
+              <h3 className="text-3xl">{selectedProject.name}</h3>
+              <p className="text-sm">{selectedProject.description}</p>
             </div>
 
             <div className="grid grid-cols-2 grid-rows-1 text-xs uppercase">
@@ -76,9 +75,9 @@ export default function Projects() {
                 <p>date</p>
               </div>
               <div>
-                <p>artist website</p>
-                <p>design & frontend</p>
-                <p>2025</p>
+                <p>{selectedProject.type}</p>
+                <p>{selectedProject.role}</p>
+                <p>{selectedProject.date}</p>
               </div>
             </div>
             <div className="grid grid-cols-2 grid-rows-1 text-xs uppercase">
@@ -86,13 +85,9 @@ export default function Projects() {
                 <p>tools</p>
               </div>
               <div>
-                <p>next</p>
-                <p>react</p>
-                <p>motion</p>
-                <p>typescript</p>
-                <p>tailwind</p>
-                <p>css</p>
-                <p>figma</p>
+                {selectedProject.tools.map((tool) => (
+                  <p key={tool}>{tool}</p>
+                ))}
               </div>
             </div>
             <div className="flex flex-col gap-2 text-xs">
@@ -103,8 +98,12 @@ export default function Projects() {
                 <a href="/">source code</a>
               </button>
             </div>
+
             <div className="flex items-center justify-between uppercase">
-              <div className="flex items-center">
+              <div
+                className="flex items-center cursor-pointer"
+                onClick={() => setSelectedProject(null)}
+              >
                 <svg
                   className="h-6 w-6 text-gray-800 dark:text-white"
                   aria-hidden="true"
@@ -122,93 +121,52 @@ export default function Projects() {
                     d="m14 8-4 4 4 4"
                   />
                 </svg>
-                <p className="text-xs">previous</p>
-              </div>
-              <div className="flex items-center">
-                <p className="text-xs">next</p>
-                <svg
-                  className="h-6 w-6 text-gray-800 dark:text-white"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m10 16 4-4-4-4"
-                  />
-                </svg>
+                <p className="text-xs">back</p>
               </div>
             </div>
           </div>
 
-          {/* COLLAGE FOR DESKTOP IMAGES */}
-          {/* <div className="grid auto-cols-auto auto-rows-min gap-y-[3px] gap-x-1.5"> */}
-          <div className="grid auto-cols-auto auto-rows-min gap-x-[3px] gap-y-[2px]">
-            <div className="relative col-span-2 justify-self-center h-[385px] w-[733px]">
-              <Image
+          {selectedProject.platform === "website" && (
+            <div className="grid auto-cols-auto h-full auto-rows-min gap-x-[3px] gap-y-[2px]">
+              {selectedProject.images.map((img, idx) => {
+                const imageClassnames = [
+                  idx === 0
+                    ? "relative col-span-2 h-[385px] w-[733px] justify-self-center"
+                    : idx === 1
+                    ? "relative h-[calc(382px/2)] w-[calc(730px/2)] justify-self-end"
+                    : "relative h-[calc(382px/2)] w-[calc(730px/2)] justify-self-start",
+                ].join(" ")
+                return (
+                  <div className={imageClassnames} key={idx}>
+                    <Image
+                      loading="lazy"
+                      placeholder="blur"
+                      src={img}
+                      fill
+                      className="object-contain"
+                      alt="image"
+                    />
+                  </div>
+                )
+              })}
+            </div>
+          )}
+          {selectedProject.platform === "mobile" && (
+            <div className="grid grid-cols-3 items-center">
+              {selectedProject.images.map((img, idx) => (
+              <div className="relative h-[500px]" key={idx}>
+                <Image
                 loading="lazy"
-                src={leon}
+                src={img}
                 fill
                 className="object-contain"
-                alt="image"
-              />
+                alt={`image-${idx}`}
+                />
+              </div>
+              ))}
             </div>
-            <div className="relative h-[calc(382px/2)] w-[calc(730px/2)] justify-self-end">
-              <Image
-                loading="lazy"
-                src={leon}
-                fill
-                className="object-contain"
-                alt="asd"
-              />
-            </div>
-            <div className="relative h-[calc(382px/2)] w-[calc(730px/2)] justify-self-start">
-              <Image
-                loading="lazy"
-                src={leon}
-                fill
-                className="object-contain"
-                alt="asd"
-              />
-            </div>
-          </div>
-
-          {/* COLLAGE FOR MOBILE IMAGES */}
-          {/* <div className="grid items-center grid-cols-3">
-            <div className=" h-[500px] relative">
-              <Image
-                loading="lazy"
-                src={counter_a_left}
-                fill
-                className="object-contain"
-                alt="image"
-              />
-            </div>
-            <div className="h-[500px] relative">
-              <Image
-                loading="lazy"
-                src={counter_b_portrait}
-                fill
-                className="object-contain"
-                alt="image"
-              />
-            </div>
-            <div className="h-[500px] relative">
-              <Image
-                loading="lazy"
-                src={counter_c_portrait}
-                fill
-                className="object-contain"
-                alt="image"
-              />
-            </div>
-          </div> */}
+            )}
+            {/* COLLAGE FOR MOBILE IMAGES */}
         </div>
       )}
     </div>
@@ -218,6 +176,8 @@ export default function Projects() {
 const projects = [
   {
     name: "LÉON",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu erat quis purus laoreet consectetur sit amet eget mauris. Donec non ultricies leo.",
     stack: "frontend",
     type: "artist website",
     role: "design & frontend",
@@ -232,41 +192,18 @@ const projects = [
       "figma",
     ],
     platform: "website",
-  },
-  {
-    name: "Punch Publishing",
-    stack: "frontend",
-    type: "publishing platform",
-    role: "frontend developer",
-    date: "2024",
-    tools: ["next", "react", "typescript", "tailwind", "css"],
-    platform: "website",
-  },
-  {
-    name: "Krenko Helper",
-    stack: "frontend",
-    type: "gaming utility",
-    role: "design & frontend",
-    date: "2023",
-    tools: ["react", "typescript", "tailwind", "css"],
-    platform: "mobile",
+    images: [leon, leon, leon],
   },
   {
     name: "Magic: The Gathering Mobile App",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu erat quis purus laoreet consectetur sit amet eget mauris. Donec non ultricies leo.",
     stack: "frontend",
     type: "mobile app",
     role: "frontend developer",
     date: "2022",
-    tools: ["react-native", "typescript", "expo", "css"],
+    tools: ["react", "css", "sass", "figma"],
     platform: "mobile",
-  },
-  {
-    name: "Östermalm Måleriservice",
-    stack: "Web Design",
-    type: "company website",
-    role: "design & frontend",
-    date: "2021",
-    tools: ["next", "react", "typescript", "tailwind", "css", "figma"],
-    platform: "website",
+    images: [counter_a_left, counter_b_portrait, counter_c_portrait],
   },
 ]
