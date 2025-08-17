@@ -16,6 +16,11 @@
   --color-gray-secondary: oklch(0.7572 0 0);
   --color-gray-background: oklch(0.1722 0.0041 106.82);
   --color-gray-tertiary: oklch(0.36 0 0);
+  --ease-in: cubic-bezier(.4 0 1 1);
+  --ease-out: cubic-bezier(0 0 .2 1);
+  --default-transition-duration: .15s;
+  --default-transition-timing-function: cubic-bezier(.4 0 .2 1);
+  --perfect-ease: cubic-bezier(0.215 0.61 0.355 1);
 }
 
 @media (prefers-color-scheme: dark) {

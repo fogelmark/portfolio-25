@@ -1,8 +1,30 @@
 import { noto_serif_display } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
-import React from "react"
+import { motion } from "motion/react"
+import React, { useRef } from "react"
+
+const headings = ["alex fogelmark", "frontend developer", "based in stockholm"]
 
 export default function HeroHeading() {
+  const container = useRef(null)
+  const slideUp = {
+    initial: {
+      y: "100%",
+      rotate: 3.5,
+      opacity: 0,
+    },
+    animate: (i: number) => ({
+      y: 0,
+      rotate: 0,
+      opacity: 1,
+      transition: {
+        duration: .8,
+        delay: .1 * i,
+        ease: [0, 0, 0.2, 1],
+      },
+    }),
+  }
+
   return (
     <div
       className={cn(
@@ -10,9 +32,22 @@ export default function HeroHeading() {
         noto_serif_display.className,
       )}
     >
-      <h1 className="font-medium">alex fogelmark</h1>
-      <h1 className="font-bold">frontend developer</h1>
-      <h1 className="font-medium">based in stockholm</h1>
+      {headings.map((heading, i) => (
+        <div key={i} className="overflow-hidden">
+          <motion.div
+            className={cn(
+              "will-change-transform",
+              i === 1 ? "font-bold" : "font-medium",
+            )}
+            initial="initial"
+            animate="animate"
+            custom={i}
+            variants={slideUp}
+          >
+            {heading}
+          </motion.div>
+        </div>
+      ))}
     </div>
   )
 }

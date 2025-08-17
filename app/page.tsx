@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 import HeroHeading from "./components/hero-heading"
 import HeroNav from "./components/hero-nav"
 import IconSocialsSidebar from "./components/icon-socials-sidebar"
@@ -25,10 +25,10 @@ export default function Home() {
 
   return (
     <div className="bg-gray-background min-h-screen">
-      <div className="relative grid h-screen auto-rows-auto grid-cols-12">
+      <div className="relative grid min-h-screen auto-rows-auto grid-cols-12">
         <HeroHeading />
         <HeroNav />
-        <IconSocialsSidebar className="absolute right-0 flex h-full flex-col justify-center gap-4 p-4" />
+        <IconSocialsSidebar className="absolute right-0 flex h-full flex-col gap-4 p-4 justify-center" />
       </div>
       <Projects />
     </div>
