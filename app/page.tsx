@@ -30,7 +30,6 @@ export default function Home() {
         <HeroNav />
         <IconSocialsSidebar className="absolute right-0 flex h-full flex-col gap-4 p-4 justify-center" />
       </div>
-      <Projects />
     </div>
   )
 }

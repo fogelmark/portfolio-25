@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useInView } from "motion/react"
-import React, { useEffect, useRef, useState } from "react"
+import React, { useRef, useState } from "react"
 import leon from "@/public/images/leon-display-a.png"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
@@ -163,7 +163,7 @@ export default function Projects() {
     }),
   }
 
-    const staggerSeven = {
+  const staggerSeven = {
     initial: {
       y: "100%",
       opacity: 0,
@@ -178,28 +178,12 @@ export default function Projects() {
       },
     },
   }
-    const staggerEight = {
-    initial: {
-      y: "-100%",
-      opacity: 0,
-    },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        delay: 0.4,
-        ease: [0, 0, 0.2, 1],
-      },
-    },
-  }
 
   return (
     <div
       id="projects"
       className={cn(
-        "grid min-h-screen auto-rows-min grid-cols-12 gap-6 px-6 py-10", {
-        }
+        "grid min-h-screen auto-rows-min grid-cols-12 gap-6 px-6 py-10",
       )}
     >
       <div
@@ -377,7 +361,7 @@ export default function Projects() {
                 initial="initial"
                 animate="animate"
                 variants={fadeIn}
-                className="flex pr-3 cursor-pointer items-center"
+                className="flex cursor-pointer items-center pr-3"
                 onClick={() => setSelectedProject(null)}
               >
                 <svg
@@ -398,7 +382,6 @@ export default function Projects() {
                   />
                 </svg>
                 <p className="text-xs">back</p>
-
               </motion.div>
             </div>
           </div>

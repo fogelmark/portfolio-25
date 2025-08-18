@@ -6,7 +6,7 @@ const navItems = [
   { name: "about", href: "/about" },
   // { name: "contact", href: "/contact" },
   { name: "design library", href: "/design-library" },
-  { name: "projects", href: "#projects" },
+  { name: "projects", href: "/projects" },
 ]
 
 export default function HeroNav() {
