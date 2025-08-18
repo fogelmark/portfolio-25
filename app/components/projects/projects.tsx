@@ -28,9 +28,9 @@ export default function Projects() {
     animate: {
       opacity: 1,
       transition: {
-        delay: 0.15,
+        delay: 1,
         duration: 1.2,
-        ease: [.4, 0, 0.2, 1],
+        ease: [0, 0, 0.2, 1],
       },
     },
   }
@@ -165,7 +165,7 @@ export default function Projects() {
 
     const staggerSeven = {
     initial: {
-      y: "-100%",
+      y: "100%",
       opacity: 0,
     },
     animate: {
@@ -376,7 +376,7 @@ export default function Projects() {
               <motion.div
                 initial="initial"
                 animate="animate"
-                variants={staggerSeven}
+                variants={fadeIn}
                 className="flex pr-3 cursor-pointer items-center"
                 onClick={() => setSelectedProject(null)}
               >
