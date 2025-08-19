@@ -5,8 +5,6 @@ import HeroHeading from "./components/hero-heading"
 import HeroNav from "./components/hero-nav"
 import IconSocialsSidebar from "./components/icon-socials-sidebar"
 import Lenis from "lenis"
-import { motion } from "motion/react"
-import Projects from "./components/projects/projects"
 
 export default function Home() {
   useEffect(() => {

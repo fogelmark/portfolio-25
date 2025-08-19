@@ -1,10 +1,10 @@
+import { cn } from "@/lib/utils"
 import { motion } from "motion/react"
 import Link from "next/link"
 import React from "react"
 
 const navItems = [
   { name: "about", href: "/about" },
-  // { name: "contact", href: "/contact" },
   { name: "design library", href: "/design-library" },
   { name: "projects", href: "/projects" },
 ]
@@ -23,8 +23,8 @@ export default function HeroNav() {
       opacity: 1,
       willChange: "transform, opacity",
       transition: {
-        duration: .8,
-        delay: .3 + 0.1 * i,
+        duration: 0.8,
+        delay: 0.3 + 0.1 * i,
         ease: [0.4, 0, 0.2, 1],
       },
     }),
@@ -32,12 +32,16 @@ export default function HeroNav() {
 
   return (
     <nav className="col-span-12 flex items-center justify-center self-center uppercase">
-      <ul className="text-gray-secondary flex gap-2.5 text-xs font-medium">
+      <ul className="group text-gray-secondary flex text-xs font-medium">
         {navItems.map((item, i) => (
-          <div key={i} className="overflow-hidden">
+          <div key={i} className="overflow-hidden cursor-pointer">
             <motion.li
               key={item.name}
-              className="will-change-transform"
+              className={cn(
+                "transition-colors duration-300 ease-out px-2 will-change-transform",
+                "group-hover:text-gray-tertiary",
+                "hover:text-gray-secondary",
+              )}
               initial="initial"
               animate="animate"
               custom={i}

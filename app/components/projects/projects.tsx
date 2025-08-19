@@ -1,14 +1,14 @@
 "use client"
 
-import { motion, useInView } from "motion/react"
-import React, { useRef, useState } from "react"
-import leon from "@/public/images/leon-display-a.png"
+import { Button } from "../button"
 import { cn } from "@/lib/utils"
-import Image from "next/image"
+import { motion, useInView } from "motion/react"
 import counter_a_left from "@/public/images/counter-app-a-left.png"
 import counter_b_portrait from "@/public/images/counter-app-b-portrait.png"
 import counter_c_portrait from "@/public/images/counter-app-c-portrait.png"
-import { Button } from "../button"
+import Image from "next/image"
+import leon from "@/public/images/leon-display-a.png"
+import React, { useRef, useState } from "react"
 
 export default function Projects() {
   const ref = useRef(null)
@@ -183,35 +183,9 @@ export default function Projects() {
     <div
       id="projects"
       className={cn(
-        "grid min-h-screen auto-rows-min grid-cols-12 gap-6 px-6 py-10",
+        "grid min-h-screen auto-rows-min grid-cols-12 place-content-center gap-6 px-6 py-10",
       )}
     >
-      <div
-        ref={ref}
-        className={cn(
-          "text-gray-secondary col-span-12 flex items-center justify-between overflow-hidden text-xs uppercase",
-          {
-            hidden: selectedProject !== null,
-          },
-        )}
-      >
-        <motion.h3
-          initial="initial"
-          animate={isInView ? "animate" : "initial"}
-          variants={slideUp}
-          className="will-change-transform"
-        >
-          project
-        </motion.h3>
-        <motion.h3
-          initial="initial"
-          animate={isInView ? "animate" : "initial"}
-          variants={slideUp}
-          className="will-change-transform"
-        >
-          stack
-        </motion.h3>
-      </div>
       <ul
         ref={ref}
         className={cn("col-span-12", {
