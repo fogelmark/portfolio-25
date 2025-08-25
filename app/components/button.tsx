@@ -5,7 +5,7 @@ import { useState } from "react"
 interface ButtonProps {
   children: string
   href?: string
-  variants: Variants
+  variants?: Variants
 }
 
 export const Button = ({ children, href, variants }: ButtonProps) => {

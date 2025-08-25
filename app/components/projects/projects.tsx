@@ -444,9 +444,9 @@ const projects = [
   {
     name: "Östermalms Måleriserice",
     description: [
-      "A website for Östermalms Måleriservice, a painting company based in Stockholm. Me and my colleague redesigned and enhanced their previous Wix website to improve user experience, modernize the design and enhance SEO.",
+      "A website for Östermalms Måleriservice,", "a painting company based in Stockholm. Me", "and my colleague redesigned and enhanced", "their previous Wix website to improve user", "experience, modernize the design and enhance", "SEO.",
     ],
-    stack: "web development",
+    stack: "web design",
     type: "painter website",
     role: "web developer",
     date: "2025",

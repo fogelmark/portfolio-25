@@ -5,13 +5,12 @@ import { motion, useInView } from "motion/react"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
 import React, { useRef } from "react"
-import { animate } from "motion"
 
 const navItems = [
   { name: "home", href: "/" },
-  { name: "about", href: "/about" },
-  { name: "design library", href: "/design-library" },
   { name: "projects", href: "/projects" },
+  { name: "design library", href: "/design-library" },
+  { name: "contact", href: "mailto:alexander.fogelmark@gmail.com" },
 ]
 
 export default function Header() {
@@ -37,11 +36,11 @@ export default function Header() {
       <nav className="col-span-12 flex items-center justify-center self-center uppercase">
         <ul className="group text-gray-secondary flex text-xs font-medium">
           {navItems.map((item, i) => (
-            <div key={i} className="overflow-hidden cursor-pointer">
+            <div key={i} className="cursor-pointer overflow-hidden">
               <motion.li
                 key={item.name}
                 className={cn(
-                  "transition-colors duration-300 ease-out px-2 will-change-transform",
+                  "px-2 transition-colors duration-300 ease-out will-change-transform",
                   "group-hover:text-gray-tertiary",
                   "hover:text-gray-secondary",
                 )}
