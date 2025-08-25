@@ -1,28 +1,41 @@
+import { cn } from "@/lib/utils"
 import { motion, Variants } from "motion/react"
 import { useState } from "react"
 
 interface ButtonProps {
   children: string
-  href: string
+  href?: string
   variants: Variants
 }
 
 export const Button = ({ children, href, variants }: ButtonProps) => {
   const [isHovered, setIsHovered] = useState(false)
+  const isDisabled = !href
 
   return (
     <motion.a
       initial="initial"
       animate="animate"
       variants={variants}
+      role="button"
       href={href}
-      className="group relative flex cursor-pointer items-center justify-center border py-4 text-xs font-medium uppercase [clip-path:inset(0px)]"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      target={href ? "_blank" : undefined}
+      tabIndex={isDisabled ? -1 : 0}
+      aria-disabled={isDisabled}
+      className={cn(
+        "group relative flex cursor-pointer items-center justify-center border py-4 text-xs font-medium uppercase [clip-path:inset(0px)]",
+        {
+          "pointer-events-none opacity-50 cursor-not-allowed border-white/20": isDisabled,
+        }
+      )}
+      onMouseEnter={() => !isDisabled && setIsHovered(true)}
+      onMouseLeave={() => !isDisabled && setIsHovered(false)}
     >
       <span className="relative z-20 leading-none [clip-path:inset(0px)]">
         <motion.span
-          className="relative inline-block text-white"
+          className={cn("relative inline-block text-white", {
+            "text-white/20": isDisabled,
+          })}
           initial={{ y: 0, opacity: 1 }}
           animate={{
             y: isHovered ? "100%" : 0,
