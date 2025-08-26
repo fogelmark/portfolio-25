@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import ParallaxGallery from "../../parallax-gallery";
 import ParallaxHero from "../../parallax-hero";
 
-export default function ParallaxSection() {
+export default function Page() {
   useEffect(() => {
     const lenis = new Lenis();
 

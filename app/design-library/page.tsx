@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function DesignLibrary() {
+export default function Page() {
   return (
     <div>Design</div>
   )
