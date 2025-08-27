@@ -33,6 +33,8 @@ import ostermalm_b from "@/public/images/ostermalm-display-b.png"
 import ostermalm_c from "@/public/images/ostermalm-display-c.png"
 
 import React, { useRef, useState } from "react"
+import ParallaxGallery from "@/app/parallax-gallery"
+import ProjectGallery from "../project-gallery"
 
 export default function Projects() {
   const ref = useRef(null)
@@ -207,7 +209,7 @@ export default function Projects() {
     <div
       id="projects"
       className={cn(
-        "grid min-h-screen auto-rows-min grid-cols-12 place-content-center gap-6 px-6 py-10",
+        "grid min-h-screen auto-rows-min grid-cols-12 place-content-center gap-6 px-6",
       )}
     >
       <ul
@@ -232,7 +234,7 @@ export default function Projects() {
               )}
             >
               <h3 className="text-3xl"> {project.name} </h3>
-              <p className="text-xs uppercase">{project.stack}</p>
+              <p className="uppercase md:text-xs">{project.stack}</p>
             </motion.li>
           </div>
         ))}
@@ -241,11 +243,11 @@ export default function Projects() {
       {/* PROJECT VIEW */}
       {selectedProject && (
         <div
-          className={cn(
-            "col-span-12 grid h-full w-full grid-cols-[0.5fr_1fr] grid-rows-[minmax(596px,_1fr)] gap-0",
-          )}
+          className={cn("col-span-12 flex flex-col md:flex-row h-full w-full gap-12 py-18")}
         >
-          <div className="flex w-2/3 max-w-[300px] flex-col justify-center gap-12">
+          <div className={cn("flex flex-col justify-center gap-12 md:z-50 md:max-w-[300px]", {
+            "md:fixed md:top-0 md:bottom-0 md:left-10": selectedProject.platform === "website",
+          })}>
             <div className="flex flex-col gap-2">
               <div className="overflow-hidden">
                 <motion.h3
@@ -262,7 +264,7 @@ export default function Projects() {
                 {selectedProject.description.map((line, i) => (
                   <div className="overflow-hidden" key={i}>
                     <motion.p
-                      className="text-sm leading-[17px] will-change-transform"
+                      className="leading-[17px] will-change-transform md:text-sm"
                       initial="initial"
                       animate="animate"
                       custom={i}
@@ -275,7 +277,7 @@ export default function Projects() {
                 ))}
               </div>
             </div>
-            <div className="text-xs uppercase">
+            <div className="uppercase md:max-w-[300px] md:text-xs">
               <div className="overflow-hidden">
                 <motion.div
                   initial="initial"
@@ -313,7 +315,7 @@ export default function Projects() {
                 </motion.div>
               </div>
             </div>
-            <div className="grid grid-cols-2 grid-rows-1 text-xs uppercase">
+            <div className="grid grid-cols-2 grid-rows-1 uppercase md:max-w-[300px] md:text-xs">
               <div className="text-gray-secondary">
                 <div className="overflow-hidden">
                   <motion.p
@@ -348,10 +350,22 @@ export default function Projects() {
               initial="initial"
               animate="animate"
               variants={fadeIn}
-              className="flex flex-col gap-2 text-xs"
+              className="flex flex-col gap-2 md:max-w-[300px] md:text-xs"
             >
-              <Button variants={fadeIn} href={selectedProject.href} children={selectedProject.platform === "mobile" ? "preview app" : "visit website"} />
-              <Button variants={fadeIn} href={selectedProject.github} children="source code" />
+              <Button
+                variants={fadeIn}
+                href={selectedProject.href}
+                children={
+                  selectedProject.platform === "mobile"
+                    ? "preview app"
+                    : "visit website"
+                }
+              />
+              <Button
+                variants={fadeIn}
+                href={selectedProject.github}
+                children="source code"
+              />
             </motion.div>
 
             <div className="flex items-center overflow-hidden uppercase">
@@ -379,7 +393,7 @@ export default function Projects() {
                     d="m14 8-4 4 4 4"
                   />
                 </svg>
-                <p className="text-xs">back</p>
+                <p className="md:text-xs">back</p>
               </motion.div>
             </div>
           </div>
@@ -389,40 +403,21 @@ export default function Projects() {
               initial="initial"
               animate="animate"
               variants={fadeIn}
-              className="grid h-full auto-cols-auto auto-rows-min place-content-center gap-1"
+              className="relative"
             >
-              {selectedProject.images.map((img, idx) => {
-                const imageClassnames = [
-                  idx === 0
-                    ? "relative col-span-2 h-[340.5px] w-[724px] justify-self-center"
-                    : idx === 1
-                      ? "relative h-[calc(340.5px/2)] w-[calc(720px/2)] justify-self-end"
-                      : "relative h-[calc(340.5px/2)] w-[calc(720px/2)] justify-self-start",
-                ].join(" ")
-                return (
-                  <div className={imageClassnames} key={idx}>
-                    <Image
-                      loading="lazy"
-                      placeholder="blur"
-                      src={img}
-                      fill
-                      className="object-cover"
-                      alt="image"
-                    />
-                  </div>
-                )
-              })}
+              <ProjectGallery images={selectedProject.images} />
             </motion.div>
           )}
+
           {selectedProject.platform === "mobile" && (
             <motion.div
               initial="initial"
               animate="animate"
               variants={fadeIn}
-              className="grid grid-cols-3 items-center"
-            >
+              className="grid md:grid-cols-3 2xl:max-w-[60%] h-full w-full items-center"
+              >
               {selectedProject.images.map((img, idx) => (
-                <div className="relative h-[500px]" key={idx}>
+                <div className="relative h-[600px]" key={idx}>
                   <Image
                     loading="lazy"
                     src={img}
@@ -444,17 +439,18 @@ const projects = [
   {
     name: "Östermalms Måleriserice",
     description: [
-      "A website for Östermalms Måleriservice,", "a painting company based in Stockholm. Me", "and my colleague redesigned and enhanced", "their previous Wix website to improve user", "experience, modernize the design and enhance", "SEO.",
+      "A website for Östermalms Måleriservice,",
+      "a painting company based in Stockholm. Me",
+      "and my colleague redesigned and enhanced",
+      "their previous Wix website to improve user",
+      "experience, modernize the design and enhance",
+      "SEO.",
     ],
     stack: "web design",
     type: "painter website",
     role: "web developer",
     date: "2025",
-    tools: [
-      "wix",
-      "figma",
-      "seo",
-    ],
+    tools: ["wix", "figma", "seo"],
     platform: "website",
     href: "https://www.ostermalmsmaleriservice.se/",
     images: [ostermalm_a, ostermalm_b, ostermalm_c],
@@ -468,15 +464,7 @@ const projects = [
     type: "card game app",
     role: "frontend developer",
     date: "2025",
-    tools: [
-      "next",
-      "motion",
-      "typescript",
-      "tailwind",
-      "css",
-      "figma",
-      "pwa",
-    ],
+    tools: ["next", "motion", "typescript", "tailwind", "css", "figma", "pwa"],
     platform: "mobile",
     href: "https://krenko-helper.vercel.app/",
     github: "https://github.com/fogelmark/krenko-helper",
@@ -491,14 +479,7 @@ const projects = [
     type: "music publisher website",
     role: "frontend developer",
     date: "2025",
-    tools: [
-      "next",
-      "motion",
-      "typescript",
-      "tailwind",
-      "css",
-      "figma",
-    ],
+    tools: ["next", "motion", "typescript", "tailwind", "css", "figma"],
     platform: "website",
     href: "https://punchpublishing.vercel.app/",
     github: "https://github.com/fogelmark/trufflepig",
@@ -513,14 +494,7 @@ const projects = [
     type: "3hour code test",
     role: "frontend developer",
     date: "2025",
-    tools: [
-      "next",
-      "typescript",
-      "tailwind",
-      "sqlite",
-      "prisma",
-      "api"
-    ],
+    tools: ["next", "typescript", "tailwind", "sqlite", "prisma", "api"],
     platform: "website",
     github: "https://github.com/fogelmark/code-test-ignite",
     images: [movietrends_a, movietrends_b, movietrends_c],
@@ -595,14 +569,7 @@ const projects = [
     type: "artist website",
     role: "design & frontend",
     date: "2023",
-    tools: [
-      "next",
-      "motion",
-      "typescript",
-      "tailwind",
-      "css",
-      "figma",
-    ],
+    tools: ["next", "motion", "typescript", "tailwind", "css", "figma"],
     platform: "website",
     href: "https://its-leon.netlify.app/",
     github: "https://github.com/fogelmark/leon-site",
@@ -617,14 +584,7 @@ const projects = [
     type: "lodging rental website",
     role: "fullstack developer",
     date: "2023",
-    tools: [
-      "react",
-      "vite",
-      "css",
-      "mongodb",
-      "nodejs",
-      "bootstrap",
-    ],
+    tools: ["react", "vite", "css", "mongodb", "nodejs", "bootstrap"],
     platform: "website",
     github: "https://github.com/fogelmark/cabin-rental",
     images: [airbnb_a, airbnb_b, airbnb_c],
