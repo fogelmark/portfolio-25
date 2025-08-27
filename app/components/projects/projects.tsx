@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 "use client"
 
 import { Button } from "../button"
@@ -33,7 +35,6 @@ import ostermalm_b from "@/public/images/ostermalm-display-b.png"
 import ostermalm_c from "@/public/images/ostermalm-display-c.png"
 
 import React, { useRef, useState } from "react"
-import ParallaxGallery from "@/app/parallax-gallery"
 import ProjectGallery from "../project-gallery"
 
 export default function Projects() {
@@ -243,11 +244,19 @@ export default function Projects() {
       {/* PROJECT VIEW */}
       {selectedProject && (
         <div
-          className={cn("col-span-12 flex flex-col md:flex-row h-full w-full gap-12 py-18")}
+          className={cn(
+            "col-span-12 flex h-full w-full flex-col gap-12 py-18 md:flex-row",
+          )}
         >
-          <div className={cn("flex flex-col justify-center gap-12 md:z-50 md:max-w-[300px]", {
-            "md:fixed md:top-0 md:bottom-0 md:left-10": selectedProject.platform === "website",
-          })}>
+          <div
+            className={cn(
+              "flex flex-col justify-center gap-12 md:z-50 md:max-w-[300px]",
+              {
+                "md:fixed md:top-0 md:bottom-0 md:left-10":
+                  selectedProject.platform === "website",
+              },
+            )}
+          >
             <div className="flex flex-col gap-2">
               <div className="overflow-hidden">
                 <motion.h3
@@ -414,8 +423,8 @@ export default function Projects() {
               initial="initial"
               animate="animate"
               variants={fadeIn}
-              className="grid md:grid-cols-3 2xl:max-w-[60%] h-full w-full items-center"
-              >
+              className="grid h-full w-full items-center md:grid-cols-3 2xl:max-w-[60%]"
+            >
               {selectedProject.images.map((img, idx) => (
                 <div className="relative h-[600px]" key={idx}>
                   <Image

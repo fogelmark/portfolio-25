@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect } from "react"
 import HeroHeading from "./components/hero-heading"
 import HeroNav from "./components/hero-nav"
 import IconSocialsSidebar from "./components/icon-socials-sidebar"

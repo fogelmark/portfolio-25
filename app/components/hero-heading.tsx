@@ -1,12 +1,11 @@
 import { noto_serif_display } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import { motion } from "motion/react"
-import React, { useRef } from "react"
+import React from "react"
 
 const headings = ["alex fogelmark", "frontend developer", "based in stockholm"]
 
 export default function HeroHeading() {
-  const container = useRef(null)
   const slideUp = {
     initial: {
       y: "100%",
@@ -18,8 +17,8 @@ export default function HeroHeading() {
       rotate: 0,
       opacity: 1,
       transition: {
-        duration: .8,
-        delay: .1 * i,
+        duration: 0.8,
+        delay: 0.1 * i,
         ease: [0, 0, 0.2, 1],
       },
     }),
