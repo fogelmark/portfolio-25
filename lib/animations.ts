@@ -65,7 +65,7 @@
       y: "-100%",
       opacity: 0,
     },
-    animate: (i: number) => ({
+    animate: {
       y: 0,
       opacity: 1,
       transition: {
@@ -73,7 +73,7 @@
         delay: 0.2,
         ease: [0, 0, 0.2, 1],
       },
-    }),
+    },
   }
 
   export const staggerFour = {
@@ -81,7 +81,7 @@
       y: "-100%",
       opacity: 0,
     },
-    animate: (i: number) => ({
+    animate: {
       y: 0,
       opacity: 1,
       transition: {
@@ -89,7 +89,7 @@
         delay: 0.25,
         ease: [0, 0, 0.2, 1],
       },
-    }),
+    },
   }
 
   export const staggerFive = {
@@ -97,7 +97,7 @@
       y: "-100%",
       opacity: 0,
     },
-    animate: (i: number) => ({
+    animate: {
       y: 0,
       opacity: 1,
       transition: {
@@ -105,7 +105,7 @@
         delay: 0.3,
         ease: [0, 0, 0.2, 1],
       },
-    }),
+    },
   }
 
   export const staggerSix = {
@@ -129,7 +129,7 @@
       y: "-100%",
       opacity: 0,
     },
-    animate: (i: number) => ({
+    animate: {
       y: 0,
       opacity: 1,
       transition: {
@@ -137,5 +137,5 @@
         delay: 0.35,
         ease: [0, 0, 0.2, 1],
       },
-    }),
+    },
   }
