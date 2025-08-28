@@ -26,7 +26,7 @@ export default function Home() {
       <div className="relative grid min-h-screen auto-rows-auto grid-cols-12">
         <HeroHeading />
         <HeroNav />
-        <IconSocialsSidebar className="absolute right-0 flex h-full flex-col justify-center gap-4 p-4" />
+        <IconSocialsSidebar className="absolute max-sm:bottom-10 md:items-end right-0 max-sm:w-full flex md:h-full md:flex-col justify-center gap-4 p-4" />
       </div>
     </div>
   )

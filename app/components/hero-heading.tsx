@@ -27,7 +27,7 @@ export default function HeroHeading() {
   return (
     <div
       className={cn(
-        "col-span-8 col-start-3 self-end text-center text-6xl uppercase",
+        "md:col-span-8 md:col-start-3 col-span-12 px-2 self-end text-center text-3xl md:text-6xl uppercase",
         noto_serif_display.className,
       )}
     >
