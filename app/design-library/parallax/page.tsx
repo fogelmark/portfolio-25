@@ -21,8 +21,10 @@ export default function Page() {
   }, []);
 
   return (
-    <div className="flex flex-col relative min-h-[100vh] justify-center items-center">
-      <div className="h-screen" />
+    <div className="flex bg-white flex-col relative min-h-[100vh] justify-center items-center">
+      <div className="h-screen uppercase flex justify-center text-gray-background items-center text-2xl font-bold">
+        <h1>scroll</h1>
+      </div>
       <div className="relative h-[300vh] py-28">
         <ParallaxGallery />
       </div>
