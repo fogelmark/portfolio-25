@@ -22,7 +22,8 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="bg-gray-background min-h-screen">
+    <div className="bg-gray-background relative min-h-screen">
+      <p className="absolute p-2 bottom-0 left-0 text-gray-tertiary capitalize text-xs">© 2025 alexander fogelmark</p>
       <div className="relative grid min-h-screen auto-rows-auto grid-cols-12">
         <HeroHeading />
         <HeroNav />
