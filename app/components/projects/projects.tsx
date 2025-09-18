@@ -52,7 +52,7 @@ export default function Projects() {
                 "will-change-transform",
               )}
             >
-              <h3 className="text-3xl"> {project.name} </h3>
+              <h3 className="text-2xl"> {project.name} </h3>
               <p className="uppercase md:text-xs">{project.stack}</p>
             </motion.li>
           </div>
@@ -68,7 +68,7 @@ export default function Projects() {
         >
           <div
             className={cn(
-              "flex flex-col justify-center gap-12 md:z-50 md:max-w-[300px]",
+              "flex flex-col justify-center gap-12 md:z-50 md:max-w-[300px] min-w-[300px]",
               {
                 "md:fixed md:top-0 md:bottom-0 md:left-10":
                   selectedProject.platform === "website",
@@ -82,7 +82,7 @@ export default function Projects() {
                   animate="animate"
                   // STAGGER 1
                   variants={staggerOne}
-                  className="text-3xl will-change-transform"
+                  className="text-2xl will-change-transform"
                 >
                   {selectedProject.name}
                 </motion.h3>

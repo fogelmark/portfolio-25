@@ -28,7 +28,7 @@ import ostermalm_c from "@/public/images/ostermalm-display-c.png"
 
 export const projects = [
   {
-    name: "Östermalms Måleriserice",
+    name: "Östermalms Måleriservice",
     description: [
       "A website for Östermalms Måleriservice,",
       "a painting company based in Stockholm. Me",
@@ -49,7 +49,10 @@ export const projects = [
   {
     name: "Krenko's Assistant",
     description: [
-      "A very niche app for players of the card game Magic: The Gathering. Helps players keep track of their Goblin tokens and other game related info.",
+      "A very niche app for players of the card game",
+      "Magic: The Gathering. Helps players keep track",
+      "of their Goblin tokens and other game related",
+      "info.",
     ],
     stack: "frontend",
     type: "card game app",
@@ -64,7 +67,9 @@ export const projects = [
   {
     name: "Punch Publishing",
     description: [
-      "A website for Punch Publishing, a music publishing company based in Stockholm. Showcasing their artists and catalog.",
+      "A website for Punch Publishing, a music",
+      "publishing company based in Stockholm.",
+      "Showcasing their artists and catalog.",
     ],
     stack: "frontend",
     type: "music publisher website",
@@ -79,7 +84,9 @@ export const projects = [
   {
     name: "Movie Trends",
     description: [
-      "A movie browsing app that uses The Movie Database (TMDb) API to fetch and display trending movies.",
+      "A movie browsing app that uses The Movie",
+      "Database (TMDb) API to fetch and display",
+      "trending movies.",
     ],
     stack: "fullstack",
     type: "3hour code test",
@@ -93,7 +100,9 @@ export const projects = [
   {
     name: "MediaLog",
     description: [
-      "A fullstack media tracking app where users can log and track movies and TV-shows they have watched or want to watch.",
+      "A fullstack media tracking app where users can",
+      "log and track movies and TV-shows they have",
+      "watched or want to watch.",
     ],
     stack: "fullstack",
     type: "media tracker app",
@@ -116,7 +125,8 @@ export const projects = [
   {
     name: "Developer Blog",
     description: [
-      "A developer blog where I share my thoughts and experiences as a developer.",
+      "A developer blog where I share my thoughts",
+      "and experiences as a developer.",
     ],
     stack: "fullstack",
     type: "developer blog",
@@ -139,7 +149,9 @@ export const projects = [
   {
     name: "Lifelink",
     description: [
-      "A Magic: The Gathering themed mobile app used for tracking life totals. PWA with offline support.",
+      "A Magic: The Gathering themed mobile app",
+      "used for tracking life totals. PWA with offline",
+      "support.",
     ],
     stack: "frontend",
     type: "mobile app",
@@ -154,7 +166,8 @@ export const projects = [
   {
     name: "LÉON",
     description: [
-      "A website for the artist LÉON showcasing her music, tour dates and more.",
+      "A website for the artist LÉON showcasing her",
+      "music, tour dates and more.",
     ],
     stack: "frontend",
     type: "artist website",
@@ -169,7 +182,9 @@ export const projects = [
   {
     name: "Cabin Rental",
     description: [
-      "A school project where we built a fullstack cabin rental service featuring user authentication, bookings and more.",
+      "A school project where we built a fullstack",
+      "cabin rental service featuring user",
+      "authentication, bookings and more.",
     ],
     stack: "fullstack",
     type: "lodging rental website",
