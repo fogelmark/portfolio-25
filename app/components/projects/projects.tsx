@@ -52,7 +52,7 @@ export default function Projects() {
                 "will-change-transform",
               )}
             >
-              <h3 className="text-2xl"> {project.name} </h3>
+              <h3 className="text-3xl"> {project.name} </h3>
               <p className="uppercase md:text-xs">{project.stack}</p>
             </motion.li>
           </div>

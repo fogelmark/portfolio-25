@@ -9,17 +9,22 @@ export default function HeroHeading() {
   const slideUp = {
     initial: {
       y: "100%",
-      rotate: 3.5,
       opacity: 0,
+      scale: 0.95,
     },
     animate: (i: number) => ({
       y: 0,
-      rotate: 0,
       opacity: 1,
+      scale: 1,
       transition: {
-        duration: 0.8,
+        duration: 1.2,
         delay: 0.1 * i,
-        ease: [0, 0, 0.2, 1],
+        ease: [0.16, 1, 0.3, 1],
+        scale: {
+          duration: 1.2,
+          delay: 0.1 * i + 1.2,
+          ease: [0.16, 1, 0.3, 1],
+        },
       },
     }),
   }
