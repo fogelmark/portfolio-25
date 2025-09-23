@@ -25,8 +25,25 @@ import airbnb_c from "@/public/images/airbnb-display-c.png"
 import ostermalm_a from "@/public/images/ostermalm-display-a.png"
 import ostermalm_b from "@/public/images/ostermalm-display-b.png"
 import ostermalm_c from "@/public/images/ostermalm-display-c.png"
+import tedrico_a from "@/public/images/tedrico-display-a.png"
+import tedrico_b from "@/public/images/tedrico-display-b.png"
+import tedrico_c from "@/public/images/tedrico-display-c.png"
 
 export const projects = [
+  {
+    name: "Tedrico AB",
+    description: [
+      "A website for Tedrico a parent company", "overseeing several painting firms in Sweden.", "Me and my colleague redesigned and", "enhanced their previous site to modernize the", "design, improve user experience, and", "strengthen SEO."
+    ],
+    stack: "web design",
+    type: "painter website",
+    role: "web developer",
+    date: "2025",
+    tools: ["wix", "figma", "seo"],
+    platform: "website",
+    href: "https://www.tedrico.com/",
+    images: [tedrico_a, tedrico_b, tedrico_c],
+  },
   {
     name: "Östermalms Måleriservice",
     description: [
