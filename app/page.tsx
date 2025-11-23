@@ -22,7 +22,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="bg-gray-background relative min-h-screen">
+    <div className="bg-gray-background relative h-dvh">
       <p className="text-gray-tertiary absolute bottom-0 left-0 max-sm:w-full p-2 text-center text-xs capitalize">
         © 2025 alexander fogelmark
       </p>
