@@ -33,7 +33,7 @@ export default function Header() {
         hidden: pathname === "/",
       })}
     >
-      <nav className="col-span-12 flex items-center justify-center self-center uppercase">
+      <nav className="md:col-span-12 flex items-center justify-center self-center uppercase">
         <ul className="group text-gray-secondary flex text-xs font-medium">
           {navItems.map((item, i) => (
             <div key={i} className="cursor-pointer overflow-hidden">

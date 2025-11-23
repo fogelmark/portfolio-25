@@ -3,7 +3,6 @@ import counter_b_portrait from "@/public/images/counter-app-b-portrait.png"
 import counter_c_portrait from "@/public/images/counter-app-c-portrait.png"
 import leon_a from "@/public/images/leon-display-a.png"
 import leon_b from "@/public/images/leon-display-b.png"
-import leon_c from "@/public/images/leon-display-c.png"
 import punch_a from "@/public/images/punch-display-a.png"
 import punch_b from "@/public/images/punch-display-b.png"
 import punch_c from "@/public/images/punch-display-c.png"
@@ -31,9 +30,30 @@ import tedrico_c from "@/public/images/tedrico-display-c.png"
 
 export const projects = [
   {
+    name: "LÉON",
+    description: [
+      "The official website for the artist LÉON",
+      "showcasing her music, tour dates and more.",
+    ],
+    stack: "frontend",
+    type: "artist website",
+    role: "design & frontend",
+    date: "2025",
+    tools: ["next", "motion", "typescript", "tailwind", "css", "figma"],
+    platform: "website",
+    href: "https://www.leonartist.com/",
+    github: "https://github.com/fogelmark/leon-official",
+    images: [leon_a, leon_b],
+  },
+  {
     name: "Tedrico AB",
     description: [
-      "A website for Tedrico a parent company", "overseeing several painting firms in Sweden.", "Me and my colleague redesigned and", "enhanced their previous site to modernize the", "design, improve user experience, and", "strengthen SEO."
+      "A website for Tedrico a parent company",
+      "overseeing several painting firms in Sweden.",
+      "Me and my colleague redesigned and",
+      "enhanced their previous site to modernize the",
+      "design, improve user experience, and",
+      "strengthen SEO.",
     ],
     stack: "web design",
     type: "painter website",
@@ -179,22 +199,6 @@ export const projects = [
     href: "https://mtgcounterapp.netlify.app/",
     github: "https://github.com/fogelmark/mtg-counter-react",
     images: [counter_a_left, counter_b_portrait, counter_c_portrait],
-  },
-  {
-    name: "LÉON",
-    description: [
-      "A website for the artist LÉON showcasing her",
-      "music, tour dates and more.",
-    ],
-    stack: "frontend",
-    type: "artist website",
-    role: "design & frontend",
-    date: "2023",
-    tools: ["next", "motion", "typescript", "tailwind", "css", "figma"],
-    platform: "website",
-    href: "https://its-leon.netlify.app/",
-    github: "https://github.com/fogelmark/leon-site",
-    images: [leon_a, leon_b, leon_c],
   },
   {
     name: "Cabin Rental",

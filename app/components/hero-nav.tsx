@@ -39,7 +39,7 @@ export default function HeroNav() {
   }
 
   return (
-    <nav className="col-span-12 flex items-center justify-center self-center uppercase md:col-span-4 md:col-start-5">
+    <nav className="flex items-center py-4 max-sm:row-start-1 self-start justify-center md:self-center uppercase md:col-span-4 md:col-start-5">
       <ul className="group text-gray-secondary flex text-xs font-medium">
         {navItems.map((item, i) => (
           <div key={i} className="cursor-pointer overflow-hidden">

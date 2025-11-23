@@ -48,17 +48,19 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
         />
       </motion.div>
 
-      <motion.div
-        // style={isDesktop ? { y: two } : {}}
-        className="relative flex h-fit w-[100%] flex-col md:col-span-2 md:col-start-3 md:h-[20vw] md:-translate-x-30"
-      >
-        <motion.img
-          // style={isDesktop ? { y: image } : {}}
-          className="w-full object-contain md:h-full"
-          src={images[2].src}
-          alt="bobba"
-        />
-      </motion.div>
+      {images[2] && (
+        <motion.div
+          // style={isDesktop ? { y: two } : {}}
+          className="relative flex h-fit w-[100%] flex-col md:col-span-2 md:col-start-3 md:h-[20vw] md:-translate-x-30"
+        >
+          <motion.img
+            // style={isDesktop ? { y: image } : {}}
+            className="w-full object-contain md:h-full"
+            src={images[2].src}
+            alt="bobba"
+          />
+        </motion.div>
+      )}
     </div>
   )
 }

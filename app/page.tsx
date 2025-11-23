@@ -23,11 +23,13 @@ export default function Home() {
 
   return (
     <div className="bg-gray-background relative min-h-screen">
-      <p className="absolute p-2 bottom-0 left-0 text-gray-tertiary capitalize text-xs">© 2025 alexander fogelmark</p>
-      <div className="relative grid min-h-screen auto-rows-auto grid-cols-12">
+      <p className="text-gray-tertiary absolute bottom-0 left-0 max-sm:w-full p-2 text-center text-xs capitalize">
+        © 2025 alexander fogelmark
+      </p>
+      <div className="relative grid min-h-screen auto-cols-auto md:auto-rows-auto md:grid-cols-12">
         <HeroHeading />
         <HeroNav />
-        <IconSocialsSidebar className="absolute max-sm:bottom-10 md:items-end right-0 max-sm:w-full flex md:h-full md:flex-col justify-center gap-4 p-4" />
+        <IconSocialsSidebar className="right-0 flex max-sm:w-full justify-center gap-4 self-start p-4 max-sm:bottom-10 md:absolute md:h-full md:flex-col md:items-end" />
       </div>
     </div>
   )
