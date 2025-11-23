@@ -25,7 +25,7 @@ export default function Page() {
       <div className="h-screen uppercase flex justify-center text-gray-background items-center text-2xl font-bold">
         <h1>scroll</h1>
       </div>
-      <div className="relative h-[300vh] py-28">
+      <div className="relative h-[200vh] py-28">
         <ParallaxGallery />
       </div>
       <ParallaxHero />

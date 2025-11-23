@@ -48,12 +48,12 @@ export default function Projects() {
               custom={i}
               variants={slideUp}
               className={cn(
-                "text-gray-tertiary z-[999] border-b-gray-tertiary/50 relative flex cursor-pointer items-end justify-between border-b py-2 will-change-transform hover:text-white",
+                "text-gray-tertiary z-[999] border-b-gray-tertiary/50 relative flex cursor-pointer md:items-end items-center justify-between border-b py-2 will-change-transform hover:text-white",
                 "will-change-transform",
               )}
             >
-              <h3 className="text-3xl"> {project.name} </h3>
-              <p className="uppercase md:text-xs">{project.stack}</p>
+              <h3 className="text-base md:text-3xl"> {project.name} </h3>
+              <p className="uppercase text-xs">{project.stack}</p>
             </motion.li>
           </div>
         ))}

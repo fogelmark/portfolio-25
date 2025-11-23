@@ -16,7 +16,7 @@ export default function ParallaxHero() {
   return (
     <div
       ref={container}
-      className="flex h-[200vh] w-full items-center justify-center bg-[#f0efe9]"
+      className="flex h-[100vh] w-full items-center justify-center bg-[#f0efe9]"
     >
       <div className="relative h-screen w-full overflow-hidden p-10">
         <div className="relative flex size-full flex-col items-center justify-center overflow-hidden">
@@ -24,10 +24,10 @@ export default function ParallaxHero() {
             <h3 className={cn("text-2xl capitalize", noto_serif.className)}>
               a simple trick to
             </h3>
-            <h2 className="text-6xl font-medium uppercase">engage the user</h2>
+            <h2 className="text-2xl md:text-6xl font-medium uppercase">engage the user</h2>
             <h2
               className={cn(
-                "text-6xl font-medium uppercase",
+                "text-3xl md:text-6xl font-medium uppercase",
                 noto_serif.className,
               )}
             >

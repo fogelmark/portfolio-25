@@ -20,9 +20,9 @@ export default function ParallaxGallery() {
   return (
     <div
       ref={container}
-      className="relative grid w-full grid-cols-4 items-center gap-4 px-10"
+      className="relative grid w-full md:grid-cols-4 items-center gap-4 px-10"
     >
-      <div className="col-start-4 flex flex-col">
+      <div className="md:col-start-4 flex flex-col">
         <div className="h-[500px] overflow-hidden">
           <motion.img
             style={{ y: image }}
@@ -37,7 +37,7 @@ export default function ParallaxGallery() {
 
       <motion.div
         style={{ y: one }}
-        className="col-start-2 flex h-fit -translate-y-44 flex-col"
+        className="md:col-start-2 flex h-fit -translate-y-44 flex-col"
       >
         <div className="h-[500px] overflow-hidden">
           <motion.img
@@ -53,7 +53,7 @@ export default function ParallaxGallery() {
 
       <motion.div
         style={{ y: two }}
-        className="col-start-3 row-start-3 flex h-fit -translate-y-80 flex-col"
+        className="md:col-start-3 md:row-start-3 flex h-fit -translate-y-80 flex-col"
       >
         <div className="h-[500px] overflow-hidden">
           <motion.img
