@@ -26,7 +26,7 @@ export default function Home() {
       <p className="text-gray-tertiary absolute bottom-0 left-0 max-sm:w-full p-2 text-center text-xs capitalize">
         © 2025 alexander fogelmark
       </p>
-      <div className="relative grid min-h-dvh auto-cols-auto md:auto-rows-auto md:grid-cols-12">
+      <div className="relative grid h-dvh auto-cols-auto md:auto-rows-auto md:grid-cols-12">
         <HeroHeading />
         <HeroNav />
         <IconSocialsSidebar className="right-0 flex max-sm:w-full justify-center gap-4 self-start p-4 max-sm:bottom-10 md:absolute md:h-full md:flex-col md:items-end" />
