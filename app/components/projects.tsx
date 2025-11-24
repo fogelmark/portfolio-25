@@ -2,13 +2,13 @@
 
 "use client"
 
-import { Button } from "../button"
+import { Button } from "./button"
 import { cn } from "@/lib/utils"
 import { motion, useInView } from "motion/react"
 import Image from "next/image"
 
 import React, { useRef, useState } from "react"
-import ProjectGallery from "../project-gallery"
+import ProjectGallery from "./project-gallery"
 import { fadeIn, slideUp, staggerFive, staggerFour, staggerOne, staggerSix, staggerSixNoArray, staggerThree, staggerTwo } from "@/lib/animations"
 import { projects } from "@/lib/projects"
 
@@ -111,7 +111,7 @@ export default function Projects() {
                   animate="animate"
                   // STAGGER 3
                   variants={staggerThree}
-                  className="grid grid-cols-2 will-change-transform"
+                  className="grid grid-cols-2 will-change-transform text-sm md:text-base"
                 >
                   <p className="text-gray-secondary">type</p>
                   <p>{selectedProject.type}</p>
@@ -123,7 +123,7 @@ export default function Projects() {
                   animate="animate"
                   // STAGGER 4
                   variants={staggerFour}
-                  className="grid grid-cols-2 will-change-transform"
+                  className="grid grid-cols-2 will-change-transform text-sm md:text-base"
                 >
                   <p className="text-gray-secondary">role</p>
                   <p>{selectedProject.role}</p>
@@ -135,7 +135,7 @@ export default function Projects() {
                   animate="animate"
                   // STAGGER 5
                   variants={staggerFive}
-                  className="grid grid-cols-2 will-change-transform"
+                  className="grid grid-cols-2 will-change-transform text-sm md:text-base"
                 >
                   <p className="text-gray-secondary">date</p>
                   <p>{selectedProject.date}</p>
@@ -150,7 +150,7 @@ export default function Projects() {
                     animate="animate"
                     // STAGGER 6
                     variants={staggerSixNoArray}
-                    className="will-change-transform"
+                    className="will-change-transform text-sm md:text-base"
                   >
                     tools
                   </motion.p>
@@ -165,7 +165,7 @@ export default function Projects() {
                       custom={i}
                       // STAGGER 6
                       variants={staggerSix}
-                      className="will-change-transform"
+                      className="will-change-transform text-sm md:text-base"
                     >
                       {tool}
                     </motion.p>
@@ -220,7 +220,7 @@ export default function Projects() {
                     d="m14 8-4 4 4 4"
                   />
                 </svg>
-                <p className="md:text-xs">back</p>
+                <p className="text-sm md:text-xs">back</p>
               </motion.div>
             </div>
           </div>

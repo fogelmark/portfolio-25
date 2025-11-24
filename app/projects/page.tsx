@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect } from 'react'
-import Projects from '../components/projects/projects'
+import Projects from '../components/projects'
 import Lenis from 'lenis'
 
 export default function Page() {
@@ -21,7 +21,7 @@ export default function Page() {
   }, [])
 
   return (
-    <div className='bg-gray-background min-h-screen'>
+    <div className='bg-gray-background min-h-screen overflow-x-hidden'>
       <Projects />
     </div>
   )
