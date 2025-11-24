@@ -68,7 +68,7 @@ export default function Projects() {
         >
           <div
             className={cn(
-              "flex flex-col justify-center gap-12 md:z-50 md:max-w-[300px] min-w-[300px]",
+              "flex flex-col justify-center gap-12 z-50 md:max-w-[300px] min-w-[300px]",
               {
                 "md:fixed md:top-0 md:bottom-0 md:left-10":
                   selectedProject.platform === "website",
@@ -104,14 +104,14 @@ export default function Projects() {
                 ))}
               </div>
             </div>
-            <div className="uppercase md:max-w-[300px] md:text-xs">
+            <div className="uppercase md:max-w-[300px] text-xs">
               <div className="overflow-hidden">
                 <motion.div
                   initial="initial"
                   animate="animate"
                   // STAGGER 3
                   variants={staggerThree}
-                  className="grid grid-cols-2 will-change-transform text-sm md:text-base"
+                  className="grid grid-cols-2 will-change-transform"
                 >
                   <p className="text-gray-secondary">type</p>
                   <p>{selectedProject.type}</p>
@@ -123,7 +123,7 @@ export default function Projects() {
                   animate="animate"
                   // STAGGER 4
                   variants={staggerFour}
-                  className="grid grid-cols-2 will-change-transform text-sm md:text-base"
+                  className="grid grid-cols-2 will-change-transform"
                 >
                   <p className="text-gray-secondary">role</p>
                   <p>{selectedProject.role}</p>
@@ -135,14 +135,14 @@ export default function Projects() {
                   animate="animate"
                   // STAGGER 5
                   variants={staggerFive}
-                  className="grid grid-cols-2 will-change-transform text-sm md:text-base"
+                  className="grid grid-cols-2 will-change-transform"
                 >
                   <p className="text-gray-secondary">date</p>
                   <p>{selectedProject.date}</p>
                 </motion.div>
               </div>
             </div>
-            <div className="grid grid-cols-2 grid-rows-1 uppercase md:max-w-[300px] md:text-xs">
+            <div className="grid grid-cols-2 grid-rows-1 uppercase md:max-w-[300px] text-xs">
               <div className="text-gray-secondary">
                 <div className="overflow-hidden">
                   <motion.p
@@ -150,7 +150,7 @@ export default function Projects() {
                     animate="animate"
                     // STAGGER 6
                     variants={staggerSixNoArray}
-                    className="will-change-transform text-sm md:text-base"
+                    className="will-change-transform"
                   >
                     tools
                   </motion.p>
@@ -165,7 +165,7 @@ export default function Projects() {
                       custom={i}
                       // STAGGER 6
                       variants={staggerSix}
-                      className="will-change-transform text-sm md:text-base"
+                      className="will-change-transform"
                     >
                       {tool}
                     </motion.p>
@@ -177,7 +177,7 @@ export default function Projects() {
               initial="initial"
               animate="animate"
               variants={fadeIn}
-              className="flex flex-col gap-2 md:max-w-[300px] md:text-xs"
+              className="flex flex-col gap-2 md:max-w-[300px] text-xs"
             >
               <Button
                 variants={fadeIn}
@@ -220,7 +220,7 @@ export default function Projects() {
                     d="m14 8-4 4 4 4"
                   />
                 </svg>
-                <p className="text-sm md:text-xs">back</p>
+                <p className="text-xs md:text-xs">back</p>
               </motion.div>
             </div>
           </div>
