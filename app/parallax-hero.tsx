@@ -16,7 +16,7 @@ export default function ParallaxHero() {
   return (
     <div
       ref={container}
-      className="flex h-[100vh] w-full items-center justify-center bg-[#f0efe9]"
+      className="flex md:h-[200vh] h-[100vh] w-full items-center justify-center bg-[#f0efe9]"
     >
       <div className="relative h-screen w-full overflow-hidden p-10">
         <div className="relative flex size-full flex-col items-center justify-center overflow-hidden">
