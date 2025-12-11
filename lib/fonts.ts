@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import {
   Bricolage_Grotesque,
   Noto_Serif,
@@ -123,11 +125,11 @@ export const switzer = localFont({
       weight: "100",
       style: "italic",
     },
-    {
-      path: "../public/fonts/Switzer-ExtraLight.woff2",
-      weight: "200",
-      style: "normal",
-    },
+    // {
+    //   path: "../public/fonts/Switzer-ExtraLight.woff2",
+    //   weight: "200",
+    //   style: "normal",
+    // },
     {
       path: "../public/fonts/Switzer-ExtraLightItalic.woff2",
       weight: "200",
