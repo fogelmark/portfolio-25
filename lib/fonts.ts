@@ -70,11 +70,11 @@ export const humane = localFont({
       weight: "100",
       style: "normal",
     },
-    // {
-    //   path: "../public/fonts/Humane-ExtraLight.woff2",
-    //   weight: "200",
-    //   style: "normal",
-    // },
+    {
+      path: "../public/fonts/Humane-ExtraLight.woff2",
+      weight: "200",
+      style: "normal",
+    },
     {
       path: "../public/fonts/Humane-Light.woff2",
       weight: "300",
