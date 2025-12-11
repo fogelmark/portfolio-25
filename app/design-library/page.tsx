@@ -6,6 +6,7 @@ const navItems = [
   { name: "parallax", href: "/design-library/parallax" },
   { name: "text masque", href: "/design-library/text-masque" },
   { name: "buttons", href: "/design-library/buttons" },
+  { name: "color sequence", href: "/design-library/color-sequence" },
 ]
 
 export default function Page() {
