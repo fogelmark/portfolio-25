@@ -20,7 +20,9 @@ export default function Page() {
   }, [totalDuration])
 
   const slideIn = {
-    initial: { x: "100%" },
+    initial: (i: number) => ({
+      x: letters[i] === "i" ? "200%" : "100%",
+    }),
     animate: (i: number) => ({
       x: 0,
       transition: {
@@ -36,7 +38,7 @@ export default function Page() {
       className={cn(
         "flex h-screen w-screen items-center justify-center text-[20vw] uppercase transition-colors duration-500",
         gray ? "bg-gray-background" : "bg-red-primary",
-        murmure.className
+        murmure.className,
       )}
     >
       {letters.map((letter, i) => {
