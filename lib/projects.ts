@@ -27,8 +27,29 @@ import ostermalm_c from "@/public/images/ostermalm-display-c.png"
 import tedrico_a from "@/public/images/tedrico-display-a.png"
 import tedrico_b from "@/public/images/tedrico-display-b.png"
 import tedrico_c from "@/public/images/tedrico-display-c.png"
+import regex_a from "@/public/images/regex-display-a.png"
+import regex_b from "@/public/images/regex-display-b.png"
 
 export const projects = [
+  {
+    name: "Regex & Cron Visualizer",
+    description: [
+      "A modern, lightweight developer tool for",
+      "testing and visualizing regex patterns and cron",
+      "expressions in real-time. Built as a pure",
+      "frontend application with Next.js and",
+      "TypeScript.",
+    ],
+    stack: "frontend",
+    type: "dev tool",
+    role: "frontend",
+    date: "2026",
+    tools: ["next", "typescript", "tailwind", "claude"],
+    platform: "website",
+    href: "https://reg-cron-helper.vercel.app/",
+    github: "https://github.com/fogelmark/reg-cron-helper/blob/main/README.md",
+    images: [regex_a, regex_b],
+  },
   {
     name: "LÉON",
     description: [
