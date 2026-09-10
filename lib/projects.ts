@@ -229,7 +229,7 @@ export const projects = [
       "authentication, bookings and more.",
     ],
     stack: "fullstack",
-    type: "lodging rental website",
+    type: "rental website",
     role: "fullstack developer",
     date: "2023",
     tools: ["react", "vite", "css", "mongodb", "nodejs", "bootstrap"],
