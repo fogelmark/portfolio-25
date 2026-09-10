@@ -25,8 +25,9 @@ export const Button = ({ children, href, variants }: ButtonProps) => {
       className={cn(
         "group relative flex cursor-pointer items-center justify-center border py-4 text-xs font-medium uppercase [clip-path:inset(0px)]",
         {
-          "pointer-events-none opacity-50 cursor-not-allowed border-white/20": isDisabled,
-        }
+          "pointer-events-none cursor-not-allowed border-white/20 opacity-50":
+            isDisabled,
+        },
       )}
       onMouseEnter={() => !isDisabled && setIsHovered(true)}
       onMouseLeave={() => !isDisabled && setIsHovered(false)}

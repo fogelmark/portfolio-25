@@ -27,10 +27,10 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
       ref={container}
       className="relative grid w-full items-center gap-2 md:grid-cols-[350px_1fr_1fr_1fr] md:gap-4 md:px-10"
     >
-      <div className="relative w-full aspect-[16/10] overflow-hidden md:col-span-3 md:col-start-2">
+      <div className="relative w-full overflow-hidden rounded-sm md:col-span-3 md:col-start-2">
         <motion.img
           // style={isDesktop ? { y: image } : {}}
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover"
           src={images[0].src}
           alt="bobba"
         />
@@ -38,11 +38,11 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
 
       <motion.div
         // style={isDesktop ? { y: one } : {}}
-        className="relative w-full aspect-[16/10] overflow-hidden md:col-span-3 md:col-start-2"
+        className="relative w-full overflow-hidden rounded-sm md:col-span-3 md:col-start-2"
       >
         <motion.img
           // style={isDesktop ? { y: image } : {}}
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover"
           src={images[1].src}
           alt="bobba"
         />
@@ -51,11 +51,11 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
       {images[2] && (
         <motion.div
           // style={isDesktop ? { y: two } : {}}
-          className="relative w-full aspect-[16/10] overflow-hidden md:col-span-3 md:col-start-2"
+          className="relative w-full overflow-hidden rounded-sm md:col-span-3 md:col-start-2"
         >
           <motion.img
             // style={isDesktop ? { y: image } : {}}
-            className="w-full h-full object-cover"
+            className="h-full w-full object-cover"
             src={images[2].src}
             alt="bobba"
           />

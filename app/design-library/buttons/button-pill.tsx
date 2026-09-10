@@ -1,23 +1,42 @@
 import { cn } from "@/lib/utils"
-import { motion } from "motion/react"
+import { motion, Variants } from "motion/react"
 import { useState } from "react"
 
 interface ButtonProps {
   children: string
   className?: string
+  variants?: Variants
+  href?: string
 }
 
-export const ButtonPill = ({ children, className }: ButtonProps) => {
+export const ButtonPill = ({
+  children,
+  className,
+  variants,
+  href,
+}: ButtonProps) => {
   const [isHovered, setIsHovered] = useState(false)
+  const isDisabled = !href
 
   return (
-    <span
+    <motion.a
+      initial="initial"
+      animate="animate"
+      variants={variants}
+      role="button"
+      href={href}
+      target={href ? "_blank" : undefined}
+      tabIndex={isDisabled ? -1 : 0}
+      aria-disabled={isDisabled}
       className={cn(
         "group relative flex min-w-48 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[#d9d7cb] px-12 py-4 text-xs font-semibold uppercase [clip-path:inset(0px)]",
         className,
+        {
+          "pointer-events-none cursor-not-allowed !opacity-50": isDisabled,
+        },
       )}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => !isDisabled && setIsHovered(true)}
+      onMouseLeave={() => !isDisabled && setIsHovered(false)}
     >
       <span className="relative z-20 leading-none [clip-path:inset(0px)]">
         <motion.span
@@ -61,6 +80,6 @@ export const ButtonPill = ({ children, className }: ButtonProps) => {
         className="pointer-events-none absolute top-0 z-0 h-full w-full rounded-2xl bg-[#eae9e3]"
       />
       <span className="absolute top-0 left-0 h-full w-full" />
-    </span>
+    </motion.a>
   )
 }

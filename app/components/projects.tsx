@@ -9,8 +9,19 @@ import Image from "next/image"
 
 import React, { useRef, useState } from "react"
 import ProjectGallery from "./project-gallery"
-import { fadeIn, slideUp, staggerFive, staggerFour, staggerOne, staggerSix, staggerSixNoArray, staggerThree, staggerTwo } from "@/lib/animations"
+import {
+  fadeIn,
+  slideUp,
+  staggerFive,
+  staggerFour,
+  staggerOne,
+  staggerSix,
+  staggerSixNoArray,
+  staggerThree,
+  staggerTwo,
+} from "@/lib/animations"
 import { projects } from "@/lib/projects"
+import { ButtonPill } from "../design-library/buttons/button-pill"
 
 export default function Projects() {
   const ref = useRef(null)
@@ -27,10 +38,13 @@ export default function Projects() {
     <div
       id="projects"
       className={cn(
-        "grid min-h-screen relative auto-rows-min grid-cols-12 place-content-center gap-6 px-6",
+        "relative grid min-h-screen auto-rows-min grid-cols-12 place-content-center gap-6 px-6",
       )}
     >
-      <div className="absolute inset-0 z-[49]" onClick={() => setSelectedProject(null)} />
+      <div
+        className="absolute inset-0 z-[49]"
+        onClick={() => setSelectedProject(null)}
+      />
       <ul
         ref={ref}
         className={cn("col-span-12", {
@@ -48,12 +62,12 @@ export default function Projects() {
               custom={i}
               variants={slideUp}
               className={cn(
-                "text-gray-tertiary z-[999] border-b-gray-tertiary/50 relative flex cursor-pointer md:items-end items-center justify-between border-b py-2 will-change-transform hover:text-white",
+                "text-gray-tertiary border-b-gray-tertiary/50 relative z-[999] flex cursor-pointer items-center justify-between border-b py-2 will-change-transform hover:text-white md:items-end",
                 "will-change-transform",
               )}
             >
               <h3 className="text-base md:text-3xl"> {project.name} </h3>
-              <p className="uppercase text-xs">{project.stack}</p>
+              <p className="text-xs uppercase">{project.stack}</p>
             </motion.li>
           </div>
         ))}
@@ -68,7 +82,7 @@ export default function Projects() {
         >
           <div
             className={cn(
-              "flex flex-col justify-center gap-12 z-50 md:max-w-[300px] min-w-[300px]",
+              "z-50 flex min-w-[300px] flex-col justify-center gap-12 md:max-w-[300px]",
               {
                 "md:fixed md:top-0 md:bottom-0 md:left-10":
                   selectedProject.platform === "website",
@@ -104,7 +118,7 @@ export default function Projects() {
                 ))}
               </div>
             </div>
-            <div className="uppercase md:max-w-[300px] text-xs">
+            <div className="text-xs uppercase md:max-w-[300px]">
               <div className="overflow-hidden">
                 <motion.div
                   initial="initial"
@@ -142,7 +156,7 @@ export default function Projects() {
                 </motion.div>
               </div>
             </div>
-            <div className="grid grid-cols-2 grid-rows-1 uppercase md:max-w-[300px] text-xs">
+            <div className="grid grid-cols-2 grid-rows-1 text-xs uppercase md:max-w-[300px]">
               <div className="text-gray-secondary">
                 <div className="overflow-hidden">
                   <motion.p
@@ -177,9 +191,9 @@ export default function Projects() {
               initial="initial"
               animate="animate"
               variants={fadeIn}
-              className="flex flex-col gap-2 md:max-w-[300px] text-xs"
+              className="flex flex-col gap-2 text-xs md:max-w-[300px]"
             >
-              <Button
+              <ButtonPill
                 variants={fadeIn}
                 href={selectedProject.href}
                 children={
@@ -188,7 +202,7 @@ export default function Projects() {
                     : "visit website"
                 }
               />
-              <Button
+              <ButtonPill
                 variants={fadeIn}
                 href={selectedProject.github}
                 children="source code"
